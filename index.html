@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticketing Center</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background: #222; color: white; }
+        .container { background: #333; padding: 20px; width: 50%; margin: auto; border-radius: 10px; }
+        input, select, button { width: 80%; padding: 10px; margin: 10px; border-radius: 5px; }
+        .ticket { display: none; background: whitesmoke; color: black; padding: 20px; border-radius: 10px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Ticketing Center</h1>
+    <div class="container">
+        <input type="text" id="name" placeholder="Enter your name"><br>
+        <input type="email" id="email" placeholder="Enter your email"><br>
+        <select id="ticketType">
+            <option>General Admission</option>
+            <option>Vip</option>
+            <option>Student</option>
+        </select><br>
+        <button onclick="generateTicket()">Generate Ticket</button>
+        <div class="ticket" id="ticket">
+            
+            <p><strong>Name:</strong> <span id="ticketName"></span></p>
+            <p><strong>Email:</strong> <span id="ticketEmail"></span></p>
+            <p><strong>Type:</strong> <span id="ticketTypeDisplay"></span></p>
+
+        </div>
+    </div>
+    <script>
+        function generateTicket() {
+            document.getElementById("ticketName").innerText = name;
+            document.getElementById("ticketEmail").innerText = email;
+            document.getElementById("ticketTypeDisplay").innerText = ticketType;
+            document.getElementById("ticket").style.display = "block";
+        }
+    </script>
+</body>
+</html>
